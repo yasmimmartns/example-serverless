@@ -9,30 +9,6 @@ import com.microsoft.azure.functions.*;
 
 public class Function {
 
-    @Data
-    class Cidade{
-        private Long id;
-        private String nome;
-        private Estado estado;
-
-        public Cidade (Long id, String nome, Estado estado){
-            this.setId(id);
-            this.setNome(nome);
-            this.setEstado(estado);
-        }
-    }
-
-    @Data
-    class Estado{
-        private Long id;
-        private String nome;
-
-        public Estado (Long id, String nome){
-            this.setId(id);
-            this.setNome(nome);
-        }
-    }
-
     @FunctionName ("funcaocriarcidade")
     public Cidade criar (
         @HttpTrigger (
@@ -83,4 +59,28 @@ public class Function {
 
         return 200;
     }    
+}
+
+@Data
+class Cidade{
+    private Long id;
+    private String nome;
+    private Estado estado;
+
+    public Cidade (Long id, String nome, Estado estado){
+        this.setId(id);
+        this.setNome(nome);
+        this.setEstado(estado);
+    }
+}
+
+@Data
+class Estado{
+    private Long id;
+    private String nome;
+
+    public Estado (Long id, String nome){
+        this.setId(id);
+        this.setNome(nome);
+    }
 }
